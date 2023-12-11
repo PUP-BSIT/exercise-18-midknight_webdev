@@ -1,0 +1,95 @@
+body, h1, h2, p, ul, ol {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	padding: 20px;
+	width: 700px;
+	background-image: url('mainbg.png');
+	background-attachment: fixed; 
+	background-position: center center;
+}
+
+.borders, .goals-div, .borders-link{
+	border: 3px solid #fde146;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	margin-bottom: 20px;
+	width: 500px;
+	text-align: left;
+}
+
+h1 {
+	font-size: 50px; 
+	font-style: italic; 
+	color: #fde146;
+	position: fixed; 
+	top: 50%; 
+	right: 30px; 
+	z-index: 1; 
+}
+
+h2, h3 {
+	color: #fde146;
+	font-style: italic;
+	padding-bottom: 5px;
+}
+
+h3{
+	margin-bottom: 5px;
+}
+
+p{
+	color: #ffffff;
+	padding-bottom: 5px;
+}
+
+ul li{
+	color: #fde146;
+	font-weight: 700;  
+	list-style: inside;
+}
+
+ol { 
+	color: #fde146; 
+	list-style-position: inside;
+}
+
+ol a, a {
+  color: #fefefe;
+  text-decoration: none;
+}
+
+ol a:hover, a {
+	color: #fde146;
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+img {
+	width: 200px;
+	margin: 10px auto;
+	border: 3px solid #423628;
+	border-radius: 5px;
+}
+
+.input-comments{
+	color: #ffffff;
+}
+
+.goal-comment{
+	color: #ffffff;
+}
+
+.reply-comment{
+	font-style: italic;
+	color: #ffffff;
+	padding-left: 30px;
+}
+
+label[for="full-name"], label[for="comment"] {
+    color: #ffffff;
+}

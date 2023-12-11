@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&');
+
+
+body {
+    font-family: 'Inconsolata';
+    font-size: 18px;
+    color: #244358;
+    background-image: url('landscape.jpg');
+    background-size:auto;
+    background-position: top;
+}
+
+.box {
+    background-color: #fdfae7;
+    margin: 10px 200px;
+    padding: 40px;
+    border: 8px solid #4ca4a4;
+    border-radius: 100px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #244358;
+    font-family: 'Dela Gothic One';
+    font-size: 48px;
+    color: #fad898;
+}

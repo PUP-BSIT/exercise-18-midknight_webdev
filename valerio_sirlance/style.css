@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+body {
+  background-image: linear-gradient(to top, lightgreen, white);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 10px;
+  padding: 10;
+  font-family: Baskerville, "Palatino Linotype", Palatino,
+  	"Century Schoolbook L", "Times New Roman", "serif";
+}
+
+
+h1 {
+	color: antiquewhite; 
+	background: darkgreen;
+	text-align-last: center;
+}
+
+h2 {
+	color:#EFE1E1;
+	background: #4E451D;
+}
+
+#likes li {
+	font-weight: 700;
+	color: darkgreen;
+	text-decoration: underline;
+}
+
+#works li {
+	font-weight: 700;
+	color: darkblue;
+}
+
+#testimonials h3 {
+	text-align: center;
+}
+
+#pics img {
+	float: center;
+    width:  300px;
+    height: 300px;
+    background-size: cover;
+}
+
+#goals li {
+	font-weight: 700;
+	color: darkgreen;
+	text-decoration: underline;
+}
+
+#comments {
+	text-align: center;
+}
+
+#comments li {
+	text-align: left;
+}

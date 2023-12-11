@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta 
+        name="viewport" 
+        content="width=device-width, 
+            initial-scale=1, 
+            maximum-scale=1,
+            user-scalable=0">   
+    <title>Castro Aiza Mae Page</title>
+    <link href="css.css" rel="stylesheet" />
+</head>
+<body>
+    <script type="text/javascript" src="castro.js"></script>
+    <div class="main-wrapper">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="left-page">
+            <div class="hero">
+                <div class="box-1">
+                    <div class="box-1-wrapper">
+                        <p>Castro Aiza Mae</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="personal-info">
+                <h1>My Interest and Hobbies</h1>
+                <ul>
+                    <li>Watching animes</li>
+                    <p>- I love watching animes especially genres like 
+                        romance and sci-fi.</p>
+                    <li>Playing piano</li>
+                    <p>- I'm still learning to play piano but it makes me 
+                        calm when I'm playing it. </p>
+                    <li>Collecting items</li>
+                    <p>- Collecting random items is one of my hobbies since 
+                        I was a kid like candy wrappers. </p>
+                    <li>Listening to music</li>
+                    <p>- One of my hobbies is listening to music especially 
+                        if I am at my lowest since it makes me calm. </p>
+                    <li>Eating foods</li>
+                    <p>- I love foods. </p>
+                </ul>
+            </div>
+
+            <div class="my-work">
+                <h2>My Works</h2>
+                <ol>
+                    <li><a href="#">Work 1</a></li>
+                    <li><a href="#">Work 2</a></li>
+                    <li><a href="#">Work 3</a></li>
+                    <li><a href="#">Work 4</a></li>
+                    <li><a href="#">Work 5</a></li>
+                </ol>                           
+                <h2>Exercise 16 Page</h2>
+                    <a href="exercise_16.html">Countries of the World</a>
+            </div>
+        </div>
+
+        <div class="right-page">
+            <div class="testimonial">
+                <h2>Testimonials</h2>
+                <ul>
+                    <li>
+                        KYLIE ROSS AYACOCHO
+                        <p>She is quite funny and hardworking.</p>
+                    </li>
+                    <li>
+                        JEFF CARL MONROY
+                        <p>Your last interest and hobby is a mood. I love the 
+                            contrasting colors of your website!</p>
+                    </li>
+                    <li>
+                        ARZEL FERNANDO PASCUAL
+                        <p>Adorable person who loves to laugh.</p>
+                    </li>
+                    <li>
+                        SIR LANCE VALERIO
+                        <p>Beauty and Empath of the group.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="gallery">
+                <h2>Gallery</h2>
+                <div class="image-wrapper">
+                    <img class="pic1" src="vintage1.jpg" style="width:100px;"/>
+                    <img class="pic2" src="vintage2.jpg" style="width:100px;"/>
+                    <img class="pic3" src="vintage3.jpg" style="width:100px;"/>
+                    <img class="pic4" src="vintage4.jpg" style="width:100px;"/>
+                    <img class="pic5" src="vintage5.jpg" style="width:100px;"/>
+                    <img class="pic6" src="vintage6.jpg" style="width:100px;"/>
+                </div>
+            </div>
+
+            <div class="goals-div">
+                <div class="goals">
+                    <h2>My Goals</h2>
+                    <ol>
+                        <li>One of my goals is to achieve professionalism in 
+                            my chosen field.
+                        </li>
+                        <li>Having the freedom to explore the world allowing 
+                            my heart to be full and contented.
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="comment-section">
+                    <h3>Comment Section</h3>
+                    <ul class="comment-section" id="comment_section">
+                        <li>Sir Lance
+                            <p> Wishing you the best to achieve 
+                                what you deserve!</p>
+                            <ul class="replies">
+                                - Reply
+                                <li>Aiza Mae</li>
+                                <p>Thanks po!!</p>
+                            </ul>
+                        </li>
+                        <li>Arzel Fernando
+                            <p> No matter how tough it gets, always remember 
+                                that you have the strength to overcome 
+                                obstacles!</p>
+                            <ul class="replies">
+                                - Reply
+                                <li>Aiza Mae</li>
+                                <p>Thanks po!!</p>
+                            </ul>
+                        </li>
+                        <li>Jeff Carl
+                            <p>I hope you achieve your goals! Best of luck 
+                                bestie!</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="comments">
+                    <h3>Write your Comment</h3>
+                    <div class="input-comments">
+                        <label for="name_input" class="name">Name:</label>
+                        <input id="name_input" type="text" oninput=
+                            "checkInput()">
+                        <label for="comment_input" class="comment">
+                            Comment:
+                        </label>
+                        <input id="comment_input" type="text" oninput=
+                            "checkInput()">
+                        <button id="comment_button" type="button" onclick=
+                            "commentButton()" disabled>
+                            Comment
+                        </button>
+                    </div>
+                </div>
+
+                <input
+                type="checkbox"
+                id="display_latest"
+                onchange="updateCommentList()"
+                >   
+                <label for="display_latest">Display Latest Comments</label>
+
+                <div id="new_comments_container"></div>        
+            </div>
+        </div>
+    </div>
+</body>
+</html>

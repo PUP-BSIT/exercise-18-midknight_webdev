@@ -1,23 +1,29 @@
 const animeTable = document.querySelector("#crud_form");
 
-document.querySelector("#crud_form").addEventListener("submit", function (event) {
-    event.preventDefault(); 
+document.querySelector("#crud_form").addEventListener("submit", 
+    function (event) {
+    event.preventDefault();     
     submitForm(); 
 });
 
 document.getElementById('update').addEventListener('click', function (event) {
     event.preventDefault(); 
-    submitUpdate();
+    submitUpdate();    
 })
 
 function getAnimeDetails() {
 
-    fetch("./get_anime_details.php")  
+    fetch("./anime.php", {
+        method: "GET",
+        headers: {
+            "Content-type": "application/json",
+        },
+    })
     .then(response => {
         if (!response.ok) {
             throw new Error(`Network response was not ok: 
             ${response.statusText}`);
-        }
+        }        
         return response.json();
     })
     .then(data => {        
@@ -58,20 +64,21 @@ function getAnimeDetails() {
 
 getAnimeDetails ()
 
-function submitForm() {
-    const animeName = document.querySelector("#animeName").value;
+function submitForm() {    
+    const animeName = document.querySelector("#anime_name").value;
     const genre = document.querySelector("#genre").value;
-    const authorName = document.querySelector("#authorName").value;
-    const releaseDate = document.querySelector("#releaseDate").value;
+    const authorName = document.querySelector("#author_name").value;
+    const releaseDate = document.querySelector("#release_date").value;
     const rating = document.querySelector("#rating").value;
-    
-    fetch("./insert_anime.php",{
+    console.log(animeName);
+    fetch("./anime.php",{
         method: "POST",
         headers: {
             "Content-type": "application/x-www-form-urlencoded",
         },
-        body: `animeName=${animeName}&genre=${genre}&authorName=${authorName}
-        &releaseDate=${releaseDate}&rating=${rating}`,
+        body: `anime_name=${anime_name}&genre=${genre}&author_name=
+            ${author_name}
+        &release_date=${release_date}&rating=${rating}`,
     })
     .then((response) => response.text())
     .then((responseText) => {
@@ -84,7 +91,7 @@ function submitForm() {
 }
 
 function deleteAnime(id) {     
-    fetch('./delete_anime.php', {
+    fetch('./anime.php', {
         method: 'DELETE',
         headers: {            
             "Content-type": "application/x-www-form-urlencoded",
@@ -109,29 +116,29 @@ function updateAnime(anime) {
     updateBtn.style.display = 'block'
     saveBtn.style.display = 'none'
 
-    document.getElementById("animeId").value = anime.id;
-    document.getElementById("animeName").value = anime.anime_name;
+    document.getElementById("anime_id").value = anime.id;
+    document.getElementById("anime_name").value = anime.anime_name;
     document.getElementById("genre").value = anime.genre;
-    document.getElementById("authorName").value = anime.author_name;
-    document.getElementById("releaseDate").value = anime.release_date;
+    document.getElementById("author_name").value = anime.author_name;
+    document.getElementById("release_date").value = anime.release_date;
     document.getElementById("rating").value = anime.rating;
 }
 
 function submitUpdate() {
-    const animeId = document.getElementById("animeId").value
-    const animeName = document.querySelector("#animeName").value;
+    const animeId = document.getElementById("anime_id").value
+    const animeName = document.querySelector("#anime_name").value;
     const genre = document.querySelector("#genre").value;
-    const authorName = document.querySelector("#authorName").value;
-    const releaseDate = document.querySelector("#releaseDate").value;
+    const authorName = document.querySelector("#author_name").value;
+    const releaseDate = document.querySelector("#release_date").value;
     const rating = document.querySelector("#rating").value;
 
-    fetch(`./update_anime.php`, {
+    fetch(`./anime.php`, {
         method: 'PATCH',   
         headers: {            
             "Content-type": "application/x-www-form-urlencoded",
         },
-        body: `id=${animeId}&animeName=${animeName}&genre=${genre}
-        &authorName=${authorName}&releaseDate=${releaseDate}
+        body: `id=${anime_id}&anime_name=${anime_name}&genre=${genre}
+        &author_name=${author_name}&release_date=${release_date}
         &rating=${rating}`,     
     }) 
     .then((response) => response.text())

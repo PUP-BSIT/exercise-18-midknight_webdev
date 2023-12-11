@@ -5,12 +5,13 @@ $username = 'root';
 $password = '';
 $dbname = 'anime_database';
 
-$connect = mysqli_connect($servername, $username, $password, $dbname);
 
-    if (!$connect) {
-        echo "Not Connected";
-        return;
-    };
+function getAnimeDetails ($servername, $username, $password, $dbname) {
+
+    $connect = mysqli_connect($servername, $username, $password, $dbname);
+
+    if (!$connect) return;
+    
 
     $sql = "SELECT * FROM anime";
 
@@ -31,3 +32,5 @@ $connect = mysqli_connect($servername, $username, $password, $dbname);
     }
 
     mysqli_close($connect);
+}
+

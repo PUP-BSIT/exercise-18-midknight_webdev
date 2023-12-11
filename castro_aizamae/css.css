@@ -1,0 +1,278 @@
+ @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@600&family=Poppins&family=Roboto&display=swap');
+
+:root {
+    --maincolor: #1a1826;
+    --primarycolor: #e93c2e;
+    --subcolor: #bdbdbc;
+    --textcolor: #fafaf8;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: var(--textcolor);
+    background-color: var(--maincolor);
+}
+
+ul,ol {
+    list-style-type: decimal;    
+}
+
+li,a {
+    font-size: 16px;
+    color: var(--subcolor);
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,h2 {
+    color: var(--primarycolor);
+    font-size: 20px;
+    margin: 0;
+}
+
+.main-wrapper {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle-1 {
+    width: 700px;
+    height: 700px;
+    background-color: var(--primarycolor);
+    border-radius: 50%;
+    position: absolute;
+    top: -30%;
+    right: -15%;
+}
+
+.circle-2 {
+    width: 700px;
+    height: 700px;
+    background-color: var(--primarycolor);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30%;
+    left: -20%;
+    overflow: hidden;
+}
+
+.left-page {
+    width: 40%;
+    height: 150vh;
+    background-color: var(--maincolor);
+    border-radius: 3%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgb(97, 97, 97);
+}
+
+.right-page {
+    width: 40%;
+    height: auto;
+    background-color: var(--maincolor);
+    border-radius: 3%;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgb(73, 73, 73);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    flex-direction: column;
+}
+
+.box-1 {
+    width: auto;
+    height: auto;
+    background-color: var(--primarycolor);
+    margin: 0;
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hero .box-1 p {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--textcolor);
+    margin: 0;
+}
+
+.personal-info,
+.my-work,
+.testimonial,
+.gallery,
+.comments {
+    padding: 15px;
+    width: 100%;
+    margin: 0;
+}
+
+.my-work,
+.personal-info,
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+}
+
+.image-wrapper {
+    display: grid;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    margin: auto;
+}
+
+.gallery img {
+    width: 100px;
+    height: auto;
+    border: 1px solid #ddd;
+    margin: 5px;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 19px;
+    margin: 0;
+}
+
+.comments h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-comments input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.input-comments button {
+    padding: 10px 20px;
+    border: none;    
+    background-color: var(--primarycolor);;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.comment-section h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.comment-section li {
+    list-style: none;
+    
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.comment-section li p {
+    margin: 5px 0;
+    font-style: italic;
+}
+
+.comment-section .replies {
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 2px solid #ccc;
+}
+
+.name,.comment{
+    text-align: left;
+    width: 100%;
+}
+
+#new_comments_container {
+    margin-top: 20px; 
+}
+
+.new-comment {
+    margin-bottom: 10px;
+}
+
+.new-comment .name {
+    font-weight: bold;
+    color: var(--subcolor);
+}
+
+.new-comment .comment-text {
+    margin-top: 5px; 
+    color: var(--subcolor);
+    font-style: italic;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 992px) {
+    .main-wrapper {
+        flex-direction: column;
+    }
+
+    .left-page,
+    .right-page {
+        width: 85%;
+        padding: 15px;
+    }
+
+    .right-page {
+        height: auto;
+    }
+
+    .box-1 {
+        padding: 30px;
+    }
+
+    .hero .box-1 p {
+        font-size: 2rem;
+    }
+}

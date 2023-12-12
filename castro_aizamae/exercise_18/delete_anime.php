@@ -1,10 +1,5 @@
 <?php
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'anime_database';
-
 function deleteAnime ($servername, $username, $password, $dbname, $id) {
     $connect = mysqli_connect($servername, $username, $password, $dbname);
 

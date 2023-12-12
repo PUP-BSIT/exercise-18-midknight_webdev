@@ -5,20 +5,16 @@ function searchCountry() {
         .then(response => response.json())
         .then(data => {
             const region = data[0]?.region;
-
             displayCountryDetails(data[0]);
-
-            fetch(`https://restcountries.com/v3.1/region/${region}`)
-                .then(response => response.json())
-                .then(nearbyCountries => {
-                    displayNearbyCountries(nearbyCountries);
-                })
-                .catch(error => console.error
-                    ("Error fetching nearby countries:", error));
+            return fetch(`https://restcountries.com/v3.1/region/${region}`);
         })
-        .catch(error => console.error
-            ("Error fetching country details:", error));
+        .then(response => response.json())
+        .then(nearbyCountries => {
+            displayNearbyCountries(nearbyCountries);
+        })
+        .catch(error => alert(`Error fetching country details: ${error}`));
 }
+
 
 function displayCountryDetails(country) {
     const countryDetailsContainer = document.getElementById("country_details");

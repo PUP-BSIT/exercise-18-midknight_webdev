@@ -1,10 +1,5 @@
 <?php
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'anime_database';
-
 function updateAnime ($servername, $username, $password, $dbname, $data) {
     $connect = mysqli_connect($servername, $username, $password, $dbname);
     if (!$connect) {

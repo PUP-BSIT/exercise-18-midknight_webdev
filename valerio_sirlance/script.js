@@ -3,7 +3,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const userCommentInput = document.getElementById('user_comment');
     const commentButton = document.getElementById('comment_button');
     const commentList = document.getElementById('comment_list');
-    const commentsArray = [];
+    const displayCheckbox = document.getElementById('display_latest_checkbox');
+    let commentsArray = [];
+
+    function updateCommentList() {
+        const displayLatest = displayCheckbox.checked;
+
+        commentsArray.sort((a, b) =>
+            displayLatest ? b.timestamp - a.timestamp :
+                a.timestamp - b.timestamp
+        );
+
+        commentList.innerHTML = '';
+
+        for (const comment of commentsArray) {
+            const listComment = document.createElement('li');
+            listComment.classList.add('comment-container');
+            listComment.innerHTML = `${comment.userName}
+                <p>${comment.userComment}</p>`;
+            commentList.appendChild(listComment);
+        }
+    }
 
     commentButton.addEventListener('click', () => {
         const userName = userNameInput.value.trim();
@@ -11,38 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const timestamp = new Date();
 
         if (userName && userComment) {
-            const comment = {
-                userName,
-                userComment,
-                timestamp
-            };
-
+            const comment = { userName, userComment, timestamp };
             commentsArray.push(comment);
-
             updateCommentList();
             userNameInput.value = '';
             userCommentInput.value = '';
         }
     });
 
-    function updateCommentList() {
-        const displayLatest = 
-            document.getElementById('display_latest').checked;
+    displayCheckbox.addEventListener('change', () => {
+        updateCommentList();
+    });
 
-        commentsArray.sort((a, b) => displayLatest ? b.timestamp - a.timestamp
-            : a.timestamp - b.timestamp);
-
-        commentList.innerHTML = '';
-
-        commentsArray.forEach(comment => {
-            const listComment = document.createElement('li');
-            listComment.innerHTML = `${comment.userName}
-                <p>${comment.userComment}</p>`;
-
-            commentList.append(listComment);
-        });
-    }
-
-    document.getElementById('display_latest').addEventListener
-        ('change', updateCommentList);
+    updateCommentList();
 });

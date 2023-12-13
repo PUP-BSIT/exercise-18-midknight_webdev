@@ -1,7 +1,7 @@
 const animeTable = document.querySelector("#crud_form");
 
-document.querySelector("#crud_form").addEventListener("submit", 
-    function (event) {
+document.querySelector("#crud_form").addEventListener("submit", function (event) 
+{
     event.preventDefault();     
     submitForm(); 
 });
@@ -13,7 +13,7 @@ document.getElementById('update').addEventListener('click', function (event) {
 
 function getAnimeDetails() {
 
-    fetch("./anime.php", {
+    fetch("https://likha.website/castro_exercise_18/anime.php", {
         method: "GET",
         headers: {
             "Content-type": "application/json",
@@ -71,14 +71,14 @@ function submitForm() {
     const releaseDate = document.querySelector("#release_date").value;
     const rating = document.querySelector("#rating").value;
     console.log(animeName);
-    fetch("./anime.php",{
+    fetch("https://likha.website/castro_exercise_18/anime.php",{
         method: "POST",
         headers: {
             "Content-type": "application/x-www-form-urlencoded",
         },
-        body: `anime_name=${anime_name}&genre=${genre}&author_name=
-            ${author_name}
-        &release_date=${release_date}&rating=${rating}`,
+        body: `anime_name=${animeName}&genre=${genre}&author_name=
+            ${authorName}
+        &release_date=${releaseDate}&rating=${rating}`,
     })
     .then((response) => response.text())
     .then((responseText) => {
@@ -91,7 +91,7 @@ function submitForm() {
 }
 
 function deleteAnime(id) {     
-    fetch('./anime.php', {
+    fetch("https://likha.website/castro_exercise_18/anime.php", {
         method: 'DELETE',
         headers: {            
             "Content-type": "application/x-www-form-urlencoded",
@@ -132,13 +132,13 @@ function submitUpdate() {
     const releaseDate = document.querySelector("#release_date").value;
     const rating = document.querySelector("#rating").value;
 
-    fetch(`./anime.php`, {
+    fetch("https://likha.website/castro_exercise_18/anime.php", {
         method: 'PATCH',   
         headers: {            
             "Content-type": "application/x-www-form-urlencoded",
         },
-        body: `id=${anime_id}&anime_name=${anime_name}&genre=${genre}
-        &author_name=${author_name}&release_date=${release_date}
+        body: `id=${animeId}&anime_name=${animeName}&genre=${genre}
+        &author_name=${authorName}&release_date=${releaseDate}
         &rating=${rating}`,     
     }) 
     .then((response) => response.text())
@@ -150,5 +150,3 @@ function submitUpdate() {
         console.error('Error updating anime:', error);
     });
 }
-
-

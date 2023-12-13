@@ -6,7 +6,6 @@ function getAnimeDetails ($servername, $username, $password, $dbname) {
 
     if (!$connect) return;
     
-
     $sql = "SELECT * FROM anime";
 
     $result = $connect->query($sql);
@@ -28,3 +27,4 @@ function getAnimeDetails ($servername, $username, $password, $dbname) {
     mysqli_close($connect);
 }
 
+?>

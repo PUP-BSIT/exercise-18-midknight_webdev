@@ -21,3 +21,4 @@ function insertAnime ($servername, $username, $password, $dbname, $data) {
     echo "New record created successfully";
     mysqli_close($connect);
 }
+?>

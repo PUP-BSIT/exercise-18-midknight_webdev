@@ -1,4 +1,4 @@
 function playBackgroundMusic() {
-    const audio = document.getElementById("background-music");
+    const audio = document.getElementById("background_music");
     audio.play();
 }

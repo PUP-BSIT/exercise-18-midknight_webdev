@@ -5,10 +5,14 @@ include 'update_anime.php';
 include 'delete_anime.php';
 include 'get_anime_details.php';
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'anime_database';
+$servername = "localhost";
+$username = "u247876310_midknight";
+$password = "~G5yW|W^Nf";
+$dbname = "u247876310_exercise_18";
+
+header('Access-Control-Allow-Origin: http://localhost');
+header('Access-Control-Allow-Methods: GET, POST, DELETE, PATCH, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type'); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -46,3 +50,5 @@ if ($_SERVER["REQUEST_METHOD"] == "PATCH") {
 
     updateAnime ($servername, $username, $password, $dbname, $data);    
 }
+
+?>

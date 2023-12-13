@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #2f2f2f;
-  background-image: url("photos/bg_pic.png");
+  background-image: url("media/bg_pic.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -83,6 +83,11 @@ p {
 
 .kr-ayacocho {
   grid-area: kra;
+}
+
+.kr-ayacocho:hover, .am-castro:hover, .jc-monroy:hover, .af-pascual:hover,
+.sl-valerio:hover, .group-logo:hover {
+  transform: scale(1.06);
 }
 
 .am-castro {
